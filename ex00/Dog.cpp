@@ -6,6 +6,17 @@ Dog::Dog()
 	type = "Dog";
 }
 
+
+Dog& Dog::operator=(const Dog& dog)
+{
+	if (this != &dog)
+	{
+		Animal::operator=(dog);
+		this->type = dog.type;
+	}
+	return *this;
+}
+
 void Dog::makeSound() const
 {
 	std::cout << "Woff\n";

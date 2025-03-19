@@ -11,9 +11,21 @@ class Animal
 	public:
 		Animal();
 		virtual ~Animal();
+		Animal& operator=(const Animal& animal);
 		std::string getType() const;
 		virtual void	makeSound() const;
 };
 
+class WrongAnimal
+{	
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		virtual ~WrongAnimal();
+		WrongAnimal& operator=(const WrongAnimal& animal);
+		std::string getType() const;
+		virtual void	makeSound() const;	
+};
 
 #endif

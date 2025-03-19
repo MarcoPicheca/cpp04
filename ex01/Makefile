@@ -6,7 +6,8 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 EXT = .cpp
 
-SRC = Animal$(EXT) Cat$(EXT) Dog$(EXT) main$(EXT)
+SRC = Animal$(EXT) Cat$(EXT) Dog$(EXT) main$(EXT) \
+		Brain$(EXT)
 
 all:$(NAME)
 
