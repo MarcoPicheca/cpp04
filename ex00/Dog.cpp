@@ -1,28 +1,28 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog(const Dog& dog) : Animal()
 {
-	std::cout << "Dog Constructor\n";
-	type = "Dog";
+	this->type = dog.type;
+	std::cout << "Dog copy constructor" << std::endl;
 }
-
 
 Dog& Dog::operator=(const Dog& dog)
 {
 	if (this != &dog)
 	{
-		Animal::operator=(dog);
 		this->type = dog.type;
+		std::cout << "dog copy constructor" << std::endl;
 	}
 	return *this;
 }
 
-void Dog::makeSound() const
+Dog::Dog()
 {
-	std::cout << "Woff\n";
+	this->type = "Dog";
+	std::cout << "Dog def constructor" << std::endl;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog Destructor\n";
+	std::cout << "Dog def destructor" << std::endl;
 }

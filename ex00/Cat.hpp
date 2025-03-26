@@ -1,23 +1,15 @@
 #ifndef CAT_HPP
 #define CAT_HPP
+#include <iostream>
 #include "Animal.hpp"
 
-class Cat: public Animal
+class Cat : public virtual Animal
 {
 	public:
 		Cat();
-		~Cat();
+		Cat(const Cat& cat);
 		Cat& operator=(const Cat& cat);
-		void	makeSound() const;
-};
-
-class WrongCat: public WrongAnimal
-{
-	public:
-		WrongCat();
-		~WrongCat();
-		WrongCat& operator=(const WrongCat& cat);
-		void	makeSound() const;
+		~Cat();
 };
 
 #endif

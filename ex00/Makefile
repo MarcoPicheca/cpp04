@@ -1,25 +1,23 @@
-NAME = animal
+NAME = animalSound
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-EXT = .cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp \
 
-SRC = Animal$(EXT) Cat$(EXT) Dog$(EXT) main$(EXT)
+all : $(NAME)
 
-all:$(NAME)
-
-$(NAME) : $(SRC)
-	@echo "Compiling..."
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(SRC)
+		@echo "Compiling..."
+		@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
-	@echo "Cleaning..."
-	@rm $(NAME)
+		@echo "Cleaning..."
+		@rm $(NAME)
 
 fclean: clean
 
 re: clean all
 
-.PHONY: re clean all fclean%
+.PHONY: all re clean fclean    
