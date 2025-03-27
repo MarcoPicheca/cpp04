@@ -3,33 +3,15 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-int main() {
-	const Animal* meta[10];
-
-	size_t i = 0;
-
-	while (i < 10)
-	{
-		if (i < 5)
-			meta[i] = new Dog();
-		else
-			meta[i] = new Cat();
-		i++;
-	}
-	i = 0;
-	while(i < 10)
-	{
-		if (i < 5)
-		{
-			meta[i]->makeSound();
-			delete meta[i];
-		}
-		else
-		{
-			meta[i]->makeSound();
-			delete meta[i];
-		}
-		i++;
-	}
+int main() 
+{
+	const Animal *metaDog = new Dog();
+	const Animal *metaCat = new Cat();
+	std::cout << "sound of Dog: ";
+	metaDog->makeSound();
+	std::cout << "sound of Cat: ";
+	metaCat->makeSound();
+	delete metaDog;
+	delete metaCat;
 	return 0;
 }

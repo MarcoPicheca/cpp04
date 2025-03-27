@@ -6,6 +6,11 @@ Dog::Dog(const Dog& dog) : Animal()
 	std::cout << "Dog copy constructor" << std::endl;
 }
 
+void	Dog::makeSound() const
+{
+	std::cout << "Wof abstract" << std::endl;
+}
+
 Dog& Dog::operator=(const Dog& dog)
 {
 	if (this != &dog)
@@ -18,14 +23,11 @@ Dog& Dog::operator=(const Dog& dog)
 
 Dog::Dog()
 {
-	idea = new Brain();
 	this->type = "Dog";
 	std::cout << "Dog def constructor" << std::endl;
 }
 
 Dog::~Dog()
 {
-	if (idea)
-		delete idea;
 	std::cout << "Dog def destructor" << std::endl;
 }
